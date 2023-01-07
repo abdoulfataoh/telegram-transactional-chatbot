@@ -43,7 +43,4 @@ python3 start.py
 ```python
 docker-compose up
 ```
-
-# [Star Formation Theory][sft]
-[Reference to this section](#sft)
  
