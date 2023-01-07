@@ -14,4 +14,25 @@ In this project, we proposed a  transactional `telegram chatbot` for exchanging 
 sudo apt-get update
 sudo apt-get install poetry
 ```
+
+2. Install projet dependencies
+from projet root folder type
+```bash
+poetry installl
+```
+
+3. Enable virtual env
+```bash
+poetry shell
+```
+
+4. Export bot access token
+```bash
+export BOT_API_TOKEN='access management token'
+```
+
+5. Start the project
+```bash
+python3 start.py
+```
  
