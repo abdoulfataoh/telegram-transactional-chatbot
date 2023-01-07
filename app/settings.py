@@ -3,6 +3,7 @@
 import logging
 
 from environs import Env
+from uuid import uuid4
 
 from app.telegram import handlers
 
@@ -16,15 +17,33 @@ BOT_DESCRIPTION = env.str('BOT_DESCRIPTION', 'Bot Description')
 BOT_API_TOKEN = env.str('BOT_API_TOKEN', '5929760713:AAFtqwwKzcSAXpy5YYlVTyta56fKuiueWYY')
 
 # [Support Operators]
-BOT_TASKS = env.list('BOT_TASKS', [['↑ Deposit', '↓ Withdrawal'], ['? Q&A', '📱 Contact us']])
-DEPOSIT_OPERATORS = env.list('DEPOSIT_OPERATORS', [['Orange Money', 'Mouv Money'], ['Wave', 'Yup']])
+BOT_MAIN_MENU = env.list('BOT_TASKS', [['↑ Deposit', '↓ Withdrawal'], ['? Q&A', '📱 Contact us'], ['Back', 'Home']])
+DEPOSIT_OPERATORS = env.list('DEPOSIT_OPERATORS', [['Orange Money', 'Mouv Money'], ['Wave', 'Yup'], ['Back', 'Home']])
 
-# [Handlers config]
+# [MESSAGES]
+HOME_MESSAGE = env.str(
+                'HOME_MESSAGE',
+                'Hey 🤚 {first_name}, \n'
+                'we are delighted to see you again. \n'
+                'What can we do for you ? \n\n'
+                'today is: {date}'
+)
+
+# [Handlers UUID]
+HEALTH_ID = env.uuid('HEALTH', uuid4())
+HELLO_ID = env.uuid('HELLO', uuid4())
+START_ID = env.uuid('START', uuid4())
+GOODBYE_ID = env.uuid('GOODBYE', uuid4())
+CHOOSE_TASK_ID = env.uuid('CHOOSE_TASK', uuid4())
+CHOOSE_DEPOSIT_OPERATOR_ID = env.uuid('CHOOSE_DEPOSIT_OPERATOR', uuid4())
+
+# [Prod Handlers]
 HANDLERS = env.list(
   'HANDLERS',
   [
+    handlers.health_handler,
     handlers.hello_handler,
-    handlers.choose_task_handler,
-    handlers.choose_deposit_operator_handler,
+    handlers.conversation_handler,
+
   ]
 )
