@@ -10,7 +10,6 @@ In this project, we proposed a  transactional `telegram chatbot` for exchanging 
 
 # Config
 
-- Host running
 1. Install poetry for virtual env management if it not already done
 ```bash
 sudo apt-get update
@@ -33,13 +32,18 @@ poetry shell
 export BOT_API_TOKEN='access management token'
 ```
 
-5. Start the project
+##  Start the project
 ```bash
 python3 start.py
 ```
+## Start the project with Docker
 
-- Container running
+1. skip steps 1, 2, 3 of config section
+2. launch project with docker-compose
 ```python
 docker-compose up
 ```
+
+# [Star Formation Theory][sft]
+[Reference to this section](#sft)
  
