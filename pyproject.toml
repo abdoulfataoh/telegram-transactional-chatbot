@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "telegram-payement-bot"
+name = "telegram-transactional-chatbot"
 version = "0.1.0"
-description = "A telegram bot for payement and deposit management"
+description = "A fintech telegram chatbot for mobile money management"
 authors = ["abdoulfataoh <abdoulfataoh@gmail.com>"]
 
 [tool.poetry.dependencies]
