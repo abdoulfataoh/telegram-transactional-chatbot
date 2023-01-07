@@ -2,6 +2,8 @@
 
 In this project, we proposed a  transactional `telegram chatbot` for exchanging money between mobile money operators and other digital currencies.
 
+![cover](https://github.com/abdoulfataoh/telegram-transactional-chatbot/blob/master/docs/cover.jpg)
+
 ## Create a new telegram bot
 1. Fist, search @botfarther on telegram to create a bot.
 2. Request @botfather for the new bot access management token
