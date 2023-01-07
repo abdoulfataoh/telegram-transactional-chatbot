@@ -35,4 +35,9 @@ export BOT_API_TOKEN='access management token'
 ```bash
 python3 start.py
 ```
+
+- Container running
+```python
+docker-compose up
+```
  
