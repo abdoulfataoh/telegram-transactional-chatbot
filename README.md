@@ -8,7 +8,7 @@ In this project, we proposed a  transactional `telegram chatbot` for exchanging 
 1. Fist, search @botfarther on telegram to create a bot.
 2. Request @botfather for the new bot access management token
 
-# Config
+## Config
 
 1. Install poetry for virtual env management if it not already done
 ```bash
