@@ -8,6 +8,8 @@ from telegram import Update
 from telegram import ReplyKeyboardMarkup
 from telegram import ReplyKeyboardRemove
 from telegram.ext import ContextTypes
+from telegram.ext import ConversationHandler
+
 
 from app import settings
 
@@ -55,10 +57,12 @@ async def choose_task(update: Update, context: ContextTypes.DEFAULT_TYPE) -> UUI
         ),
         parse_mode='MarkdownV2', 
     )
+    user_data = context.user_data
+    user_data['choose_task'] = update.message.text
     return settings.CHOOSE_DEPOSIT_OPERATOR_ID
     
 
-async def choose_deposit_operator(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+async def choose_deposit_operator(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     reply_keyboard = settings.DEPOSIT_OPERATORS
     await update.message.reply_text(
         'Select choose an Operator for your deposit',
@@ -69,4 +73,6 @@ async def choose_deposit_operator(update: Update, context: ContextTypes.DEFAULT_
         ),
         parse_mode='MarkdownV2'
     )
-    return settings.CHOOSE_DEPOSIT_OPERATOR_ID
+    user_data = context.user_data
+    user_data['choose_deposit_operator'] = update.message.text
+    return ConversationHandler.END
