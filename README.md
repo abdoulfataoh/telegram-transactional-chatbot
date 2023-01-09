@@ -43,4 +43,29 @@ python3 start.py
 ```python
 docker-compose up
 ```
- 
+
+## How to add a Message Handler
+
+A handler is an update event: for example a new text incoming message, a new voice incoming message, etc.
+The list below enumerate some message handlers:
+
+- [telegram.ext.CommandHandler](https://docs.python-telegram-bot.org/en/stable/telegram.ext.commandhandler.html)
+- [telegram.ext.ConversationHandler](https://docs.python-telegram-bot.org/en/stable/telegram.ext.conversationhandler.html)
+- [telegram.ext.MessageHandler](https://docs.python-telegram-bot.org/en/stable/telegram.ext.messagehandler.html)
+- [telegram.ext.PollAnswerHandler](https://docs.python-telegram-bot.org/en/stable/telegram.ext.pollanswerhandler.html)
+
+For the complete list see this [link](https://docs.python-telegram-bot.org/en/stable/telegram.ext.html)
+
+1. add a new function on this [app/telegram/handlers.py](https://github.com/abdoulfataoh/telegram-transactional-chatbot/blob/master/app/telegram/handlers.py)
+that function must have one parameter to take an Application object.
+the code below is an example to add to add `CommandHandler`
+```python
+from telegram.ext import CommandHandler
+from telegram.ext import Application
+
+
+def new_command_handler(app: Application) -> None
+    handler = CommandHandler(command='health', callback=callback)
+    app.add_handler(handler)
+    
+```
