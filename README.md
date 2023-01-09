@@ -56,10 +56,15 @@ The list below enumerate some message handlers:
 
 For the complete list see this [link](https://docs.python-telegram-bot.org/en/stable/telegram.ext.html)
 
-1. add a new function on this [app/telegram/handlers.py](https://github.com/abdoulfataoh/telegram-transactional-chatbot/blob/master/app/telegram/handlers.py)
+1. add a new function on this [app/telegram/handlers.py](https://github.com/abdoulfataoh/telegram-transactional-chatbot/blob/master/app/telegram/handlers.py) module
+
 that function must have one parameter to take an Application object.
 the code below is an example to add to add `CommandHandler`
+
 ```python
+
+# app/telegram/handlers.py
+
 from telegram.ext import CommandHandler
 from telegram.ext import Application
 
