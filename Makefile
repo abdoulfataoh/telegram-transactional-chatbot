@@ -5,8 +5,7 @@ help:
 	
 
 mypy:
-	mypy start.py --ignore-missing-imports
-
+	mypy app start.py
 flake8:
 	flake8 app start.py
 
