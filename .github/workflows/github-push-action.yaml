@@ -14,6 +14,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
-      - run: echo 'push workflow starting...'
-      - run: ls .
-
+      - run: echo 'Push workflow starting...'
+      - run: echo 'Install virtual env and dependencies'
+      - run: pip install -U pip
+      - run: pip install poetry
