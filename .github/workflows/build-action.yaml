@@ -1,0 +1,21 @@
+# coding: utf-8
+
+name: Build telegram-transactional-chatbot docker Image
+
+run-name: Build trigged by ${{github.actor}}
+
+on:
+  push:
+    branches:
+      - "master"
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build docker Image
+        run: |
+          docker container ls
+
+
