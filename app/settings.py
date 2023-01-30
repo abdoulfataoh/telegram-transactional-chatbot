@@ -5,7 +5,6 @@ import logging
 from environs import Env
 from uuid import uuid4
 
-from app import handlers
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -51,13 +50,3 @@ GOODBYE_ID = env.uuid('GOODBYE', uuid4())
 CHOOSE_TASK_ID = env.uuid('CHOOSE_TASK', uuid4())
 CHOOSE_DEPOSIT_OPERATOR_ID = env.uuid('CHOOSE_DEPOSIT_OPERATOR', uuid4())
 
-# [Prod Handlers]
-HANDLERS = env.list(
-  'HANDLERS',
-  [
-    handlers.health_handler,
-    handlers.hello_handler,
-    handlers.conversation_handler,
-
-  ]
-)

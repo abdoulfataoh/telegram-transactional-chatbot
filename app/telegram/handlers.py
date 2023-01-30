@@ -7,7 +7,7 @@ from telegram.ext import MessageHandler
 from telegram.ext import filters
 
 from app import settings
-from app import callbacks
+from app.telegram import callbacks
 
 
 def health_handler(app: Application) -> None:
