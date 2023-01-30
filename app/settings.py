@@ -5,7 +5,7 @@ import logging
 from environs import Env
 from uuid import uuid4
 
-from app.telegram import handlers
+from app import handlers
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -14,11 +14,25 @@ env = Env()
 # [Bot General Config]
 BOT_NAME = env.str('BOT_NAME', 'Bot Name')
 BOT_DESCRIPTION = env.str('BOT_DESCRIPTION', 'Bot Description')
-BOT_API_TOKEN = env.str('BOT_API_TOKEN', '5929760713:AAFtqwwKzcSAXpy5YYlVTyta56fKuiueWYY')
+BOT_API_TOKEN = env.str('BOT_API_TOKEN', 'THE BOT API TOKEN')
 
 # [Support Operators]
-BOT_MAIN_MENU = env.list('BOT_TASKS', [['↑ Deposit', '↓ Withdrawal'], ['? Q&A', '📱 Contact us'], ['Back', 'Home']])
-DEPOSIT_OPERATORS = env.list('DEPOSIT_OPERATORS', [['Orange Money', 'Mouv Money'], ['Wave', 'Yup'], ['Back', 'Home']])
+BOT_MAIN_MENU = env.list(
+  'BOT_TASKS',
+  [
+    ['↑ Deposit', '↓ Withdrawal'],
+    ['? Q&A', '📱 Contact us'],
+    ['Back', 'Home']
+  ]
+)
+DEPOSIT_OPERATORS = env.list(
+  'DEPOSIT_OPERATORS',
+  [
+    ['Orange Money', 'Mouv Money'],
+    ['Wave', 'Yup'],
+    ['Back', 'Home']
+  ]
+)
 
 # [MESSAGES]
 HOME_MESSAGE = env.str(
