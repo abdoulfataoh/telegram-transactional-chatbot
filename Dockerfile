@@ -15,8 +15,6 @@ ENV BOT_API_TOKEN=${BOT_API_TOKEN}
 
 # [Source code]
 ADD ./ /src
-RUN ls .
-
 
 # [Install poetry]
 RUN pip install -U pip
@@ -24,7 +22,10 @@ RUN pip install poetry
 
 # [Install requiered modules]
 RUN poetry config virtualenvs.in-project true
-RUN poetry install -vv --no-dev
+RUN poetry install
 
-# [Start the app]
+# [Enable venv]
+ENV PATH="/src/.venv/bin:$PATH"
+
+# # [Start the app]
 CMD [ "python3", "start.py" ]
