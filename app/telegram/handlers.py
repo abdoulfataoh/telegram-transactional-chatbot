@@ -7,7 +7,7 @@ from telegram.ext import MessageHandler
 from telegram.ext import filters
 
 from app import settings
-from app.telegram import callbacks
+from app import callbacks
 
 
 def health_handler(app: Application) -> None:
@@ -32,7 +32,7 @@ def conversation_handler(app: Application) -> None:
     conver_handler = ConversationHandler(
         entry_points=[CommandHandler('start', callbacks.choose_task)],
         states={
-            settings.CHOOSE_DEPOSIT_OPERATOR_ID : [
+            settings.CHOOSE_DEPOSIT_OPERATOR_ID: [
                 MessageHandler(
                     filters.TEXT,
                     callbacks.choose_deposit_operator
