@@ -17,5 +17,6 @@ jobs:
       - name: Build docker Image
         run: |
           docker build . -t telegram-transactional-chatbot
+          docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} -p ${{ secrets.DOCKER_HUB_TOKEN }}
 
 
