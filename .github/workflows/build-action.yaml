@@ -18,5 +18,7 @@ jobs:
         run: |
           docker build . -t telegram-transactional-chatbot
           docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} -p ${{ secrets.DOCKER_HUB_TOKEN }}
+          docker tag telegram-transactional-chatbot ${{ secrets.DOCKER_HUB_USERNAME }}/telegram-transactional-chatbot:latest
+          docker push ${{ secrets.DOCKER_HUB_USERNAME }}/telegram-transactional-chatbot:latest
 
 
