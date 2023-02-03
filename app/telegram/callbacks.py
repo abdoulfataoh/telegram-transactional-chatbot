@@ -20,7 +20,7 @@ today = datetime.now().strftime('%d/%m/%Y %H:%M:%S')
 
 
 async def health(update: Update, context: ContextTypes.DEFAULT_TYPE) -> UUID:
-    await update.message.reply_text('I am healthly 😌 🩸🩸🩸')
+    await update.message.reply_text('I am healthly 😌 🩸🩸🩸🩸')
     return settings.HEALTH_ID
 
 
