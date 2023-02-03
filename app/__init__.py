@@ -9,7 +9,7 @@ __all__ = [
     'telegram_bot',
  ]
 
- # [Prod Handlers]
+# [Prod Handlers]
 used_handlers = [
     handlers.health_handler,
     handlers.hello_handler,
@@ -17,6 +17,6 @@ used_handlers = [
 ]
 
 telegram_bot = TelegramBot(
-    api_token=settings.BOT_API_TOKEN, # type: ignore
-    handlers=used_handlers, # type: ignore
+    api_token=settings.BOT_API_TOKEN,  # type: ignore
+    handlers=used_handlers,  # type: ignore
 )

@@ -26,7 +26,7 @@ async def health(update: Update, context: ContextTypes.DEFAULT_TYPE) -> UUID:
 
 async def hello(update: Update, context: ContextTypes.DEFAULT_TYPE) -> UUID:
     await update.message.reply_text(
-        f'Hello ✋ {update.effective_user.first_name}' # type: ignore
+        f'Hello ✋ {update.effective_user.first_name}'   # type: ignore
     )
     return settings.HELLO_ID
 
@@ -34,7 +34,7 @@ async def hello(update: Update, context: ContextTypes.DEFAULT_TYPE) -> UUID:
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> UUID:
     await update.message.reply_text(
         settings.HOME_MESSAGE.format(
-            first_name=update.effective_user.first_name, # type: ignore
+            first_name=update.effective_user.first_name,  # type: ignore
             date=today
         )
     )
@@ -43,7 +43,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> UUID:
 
 async def goodbye(update: Update, context: ContextTypes.DEFAULT_TYPE) -> UUID:
     await update.message.reply_text(
-        f'Goodbye {update._effective_user.first_name}' # type: ignore
+        f'Goodbye {update._effective_user.first_name}'  # type: ignore
     )
     return settings.GOODBYE_ID
 
@@ -80,8 +80,11 @@ async def choose_deposit_operator(
         ),
         parse_mode='MarkdownV2'
     )
-    context.user_data['choose_task'] = update.message.text # type: ignore
+    context.user_data['choose_task'] = update.message.text  # type: ignore
 
     bot = update._bot
-    await bot.send_message(chat_id=1950842728, text=str(context.user_data)) # type: ignore
+    await bot.send_message(  # type: ignore
+        chat_id=1950842728,
+        text=str(context.user_data)
+    )
     return ConversationHandler.END
